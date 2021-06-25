@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-ruby /main.rb
+ruby bin/main.rb
