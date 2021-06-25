@@ -4,10 +4,10 @@ require 'json'
 # appears to be running from repo folder.
 
 # set variables
-aws_access_key_id 	  = ENV['aws_access_key_id']
-aws_secret_access_key = ENV['aws_secret_access_key']
-aws_region 			  = ENV['aws_region']
-secret_keys 		  = ENV['secret_keys']
+aws_access_key_id 	  = ENV['INPUT_AWS_ACCESS_KEY_ID']
+aws_secret_access_key = ENV['INPUT_AWS_SECRET_ACCESS_KEY']
+aws_region 			  = ENV['INPUT_AWS_REGION']
+secret_keys 		  = ENV['INPUT_SECRET_KEYS']
 
 puts aws_access_key_id
 puts aws_secret_access_key
