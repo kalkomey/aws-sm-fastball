@@ -1,6 +1,7 @@
 require 'aws-sdk-secretsmanager'
 require 'json'
 require 'yaml'
+require 'fastball'
 
 # *******************
 # *******************
@@ -37,4 +38,4 @@ end
 # *******************
 # *******************
 puts "Running $ fastball config"
-system("fastball config")
+Fastball::Config.generate
