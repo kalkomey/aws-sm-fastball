@@ -27,3 +27,5 @@ end
 File.open('app_config.json', 'w') do |f|
 	f.puts output
 end
+
+puts output
