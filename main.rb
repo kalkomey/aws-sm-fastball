@@ -32,9 +32,8 @@ secret_keys.each do |secret_key|
 end
 
 File.open('app_config.json', 'w') do |f|
-  f.puts output
+  f.puts output.json
 end
 
-puts output
-
-
+# run fastball config
+system("fastball config")
