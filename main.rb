@@ -1,5 +1,6 @@
 require 'aws-sdk-secretsmanager'
 require 'json'
+require 'yaml'
 
 # appears to be running from repo folder.
 
@@ -9,7 +10,9 @@ puts "Starting Secrets Fastball script"
 aws_access_key_id     = ENV['INPUT_AWS_ACCESS_KEY_ID']
 aws_secret_access_key = ENV['INPUT_AWS_SECRET_ACCESS_KEY']
 aws_region            = ENV['INPUT_AWS_REGION']
-secret_keys           = ENV['INPUT_SECRET_KEYS'].to_a
+
+secret_keys_string    = ENV['INPUT_SECRET_KEYS']
+secret_keys           = YAML.load(secret_keys_string)
 
 puts "assigned keys"
 
@@ -33,3 +36,5 @@ File.open('app_config.json', 'w') do |f|
 end
 
 puts output
+
+
