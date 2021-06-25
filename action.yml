@@ -1,0 +1,23 @@
+# action.yml
+name: 'KE Secrets and Fastball'
+description: 'Get Secrets from AWS Secrets Manager and run fastball to ensure all secrets are populated.'
+inputs:
+  aws_access_key_id:
+    required: true
+  aws_secret_access_key:
+    required: true
+  aws_region:
+    required: true
+  secret_keys:
+    required: true
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.aws_access_key_id }}
+    - ${{ inputs.aws_secret_access_key }}
+    - ${{ inputs.aws_region }}
+    - ${{ inputs.secret_keys }}
