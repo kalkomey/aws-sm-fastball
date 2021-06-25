@@ -3,11 +3,15 @@ require 'json'
 
 # appears to be running from repo folder.
 
+puts "Starting Secrets Fastball script"
+
 # set variables
 aws_access_key_id 	  = ENV['INPUT_AWS_ACCESS_KEY_ID']
 aws_secret_access_key = ENV['INPUT_AWS_SECRET_ACCESS_KEY']
 aws_region 			  = ENV['INPUT_AWS_REGION']
 secret_keys 		  = ENV['INPUT_SECRET_KEYS']
+
+puts "assigned keys"
 
 puts aws_access_key_id
 puts aws_secret_access_key
