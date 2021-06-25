@@ -9,7 +9,7 @@ puts "Starting Secrets Fastball script"
 aws_access_key_id     = ENV['INPUT_AWS_ACCESS_KEY_ID']
 aws_secret_access_key = ENV['INPUT_AWS_SECRET_ACCESS_KEY']
 aws_region            = ENV['INPUT_AWS_REGION']
-secret_keys           = ENV['INPUT_SECRET_KEYS']
+secret_keys           = ENV['INPUT_SECRET_KEYS'].to_a
 
 puts "assigned keys"
 
