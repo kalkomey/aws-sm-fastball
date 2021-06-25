@@ -6,10 +6,10 @@ require 'json'
 puts "Starting Secrets Fastball script"
 
 # set variables
-aws_access_key_id 	  = ENV['INPUT_AWS_ACCESS_KEY_ID']
+aws_access_key_id     = ENV['INPUT_AWS_ACCESS_KEY_ID']
 aws_secret_access_key = ENV['INPUT_AWS_SECRET_ACCESS_KEY']
-aws_region 			  = ENV['INPUT_AWS_REGION']
-secret_keys 		  = ENV['INPUT_SECRET_KEYS']
+aws_region            = ENV['INPUT_AWS_REGION']
+secret_keys           = ENV['INPUT_SECRET_KEYS']
 
 puts "assigned keys"
 
@@ -24,12 +24,12 @@ sm = Aws::SecretsManager::Client.new(region: aws_region, credentials: credential
 output = {}
 
 secret_keys.each do |secret_key|
-	secret = JSON.parse sm.get_secret_value(secret_id: secret_key).secret_string
-	output = output.merge(secret)
+  secret = JSON.parse sm.get_secret_value(secret_id: secret_key).secret_string
+  output = output.merge(secret)
 end
 
 File.open('app_config.json', 'w') do |f|
-	f.puts output
+  f.puts output
 end
 
 puts output
