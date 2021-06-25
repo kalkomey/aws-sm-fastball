@@ -27,6 +27,9 @@ secret_keys.each do |secret_key|
   output = output.merge(secret)
 end
 
+# downcase the keys or fastball gets angry
+output = output.transform_keys(&:downcase)
+
 File.open('app_config.json', 'w') do |f|
   f.puts output.to_json
 end
